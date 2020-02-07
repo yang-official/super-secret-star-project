@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://entities/player/Player.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/player/playerShip1_red.png" type="Texture" id=2]
+
+[node name="Player" type="Area2D"]
+position = Vector2( 328.163, 784.03 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -8.43542, -37.3358, 7.73047, -37.3358, 11.9216, -12.7876, 35.8711, 0.983398, 48.4446, -7.99768, 46.6484, 23.7354, 14.3166, 27.9265, 6.53299, 37.5063, -7.23798, 37.5063, -13.8241, 26.1303, -46.7546, 23.7354, -48.5508, -6.80017, -37.1748, 2.18085, -12.6266, -12.7876 )
