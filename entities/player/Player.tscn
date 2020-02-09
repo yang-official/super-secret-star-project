@@ -15,3 +15,14 @@ texture = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -8.43542, -37.3358, 7.73047, -37.3358, 11.9216, -12.7876, 35.8711, 0.983398, 48.4446, -7.99768, 46.6484, 23.7354, 14.3166, 27.9265, 6.53299, 37.5063, -7.23798, 37.5063, -13.8241, 26.1303, -46.7546, 23.7354, -48.5508, -6.80017, -37.1748, 2.18085, -12.6266, -12.7876 )
+
+[node name="guns" type="Node2D" parent="."]
+
+[node name="front" type="Position2D" parent="guns"]
+position = Vector2( 0, -40 )
+
+[node name="left" type="Position2D" parent="guns"]
+position = Vector2( -20, -10 )
+
+[node name="right" type="Position2D" parent="guns"]
+position = Vector2( 20, -10 )

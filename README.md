@@ -1,5 +1,5 @@
 # Super Secret Star Project
 
-An in-progress 2D space game
+An in-progress 2D space game built in Godot
 
-Placeholder assets from Kenney's Space Shooter Redux asset pack
+Most placeholder assets from Kenney's Space Shooter Redux asset pack

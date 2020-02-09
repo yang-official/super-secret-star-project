@@ -1,3 +1,6 @@
+# Demo background
+# Handles the background of the demo level
+
 extends Sprite
 const SCREEN_HEIGHT = 960
 var scroll_speed = 30.0

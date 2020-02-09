@@ -1,5 +1,5 @@
-# Enemy
-# Parent for entites that can damage or be damaged
+# Laser
+# Parent for laser blasts that damage
 
 extends Area2D
 
@@ -7,10 +7,10 @@ export var velocity = Vector2()
 
 func _ready():
 	set_process(true)
+	yield(get_node("VisibilityNotifier2D"), "screen_exited")
+	queue_free()
 	pass
 
 func _process(delta):
 	translate(velocity * delta)
-	if get_position().y - 40 >= get_viewport_rect().size.y:
-		queue_free()
 	pass

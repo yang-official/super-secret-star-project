@@ -1,3 +1,6 @@
+# Spawn Enemies
+# Handles the spawning of enemy entities
+
 extends Node2D
 
 const asteroid = preload("res://entities/enemy/Asteroid.tscn")
@@ -15,5 +18,5 @@ func spawn():
 		pos.y = 0 - 40
 		enemy.set_position(pos)
 		get_node("container").add_child(enemy)
-		yield(get_tree().create_timer(rand_range(0.5, 1.25)), "timeout")
+		yield(get_tree().create_timer(rand_range(1.5, 2.25)), "timeout")
 	pass
