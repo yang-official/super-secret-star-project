@@ -3,8 +3,10 @@
 
 extends Node2D
 
-const asteroid = preload("res://entities/enemy/Asteroid.tscn")
-
+const enemies = [
+	preload("res://entities/enemy/Asteroid.tscn"),
+	preload("res://entities/enemy/Drone.tscn")
+]
 func _ready():
 	spawn()
 	pass
@@ -12,7 +14,7 @@ func _ready():
 func spawn():
 	while true:
 		randomize()
-		var enemy = asteroid.instance()
+		var enemy = enemies[randi() % 2].instance()
 		var pos = Vector2()
 		pos.x = rand_range(0+50, get_viewport().get_visible_rect().size.x - 50)
 		pos.y = 0 - 40
