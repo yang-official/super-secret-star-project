@@ -3,6 +3,7 @@
 
 extends Area2D
 
+export var MOVE_SPEED = 400
 const laser_one = preload("res://entities/gun/laser_one.tscn")
 var can_shoot = true
 
@@ -11,10 +12,22 @@ func _ready():
 	pass
 
 func _process(delta):
-	# tracking mouse
-	var motion_x = (get_global_mouse_position().x - get_position().x) * 0.2
-	var motion_y = (get_global_mouse_position().y - get_position().y) * 0.2
-	translate(Vector2(motion_x, motion_y))
+	# tracking mouse controls
+	#var motion_x = (get_global_mouse_position().x - get_position().x) * 0.2
+	#var motion_y = (get_global_mouse_position().y - get_position().y) * 0.2
+	#translate(Vector2(motion_x, motion_y))
+	
+	# Keyboard Controls
+	var input_dir = Vector2()
+	if Input.is_action_pressed("ui_up"):
+		input_dir.y -= 1.0
+	if Input.is_action_pressed("ui_down"):
+		input_dir.y += 1.0
+	if Input.is_action_pressed("ui_left"):
+		input_dir.x -= 1.0
+	if Input.is_action_pressed("ui_right"):
+		input_dir.x += 1.0
+	position += (delta * MOVE_SPEED) * input_dir
 	
 	# clamp to view
 	var view_size = get_viewport_rect().size
