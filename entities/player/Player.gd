@@ -50,7 +50,7 @@ func set_HP(new_value):
 		queue_free()
 	pass
 
-# Shooting
+# Shooting front cannon
 func shoot():
 	var pos_front = get_node("guns/front").get_global_position()
 	create_laser(pos_front)
