@@ -4,11 +4,13 @@
 extends Area2D
 
 export var MOVE_SPEED = 400
+export var HP = 10 setget set_HP
 const laser_one = preload("res://entities/gun/laser_one.tscn")
 var can_shoot = true
 
 func _ready():
 	set_process(true)
+	add_to_group("player")
 	pass
 
 func _process(delta):
@@ -41,6 +43,14 @@ func _process(delta):
 		shoot()
 		get_node("guns/reload_timer").start()
 
+# Health
+func set_HP(new_value):
+	HP = new_value
+	if HP <= 0:
+		queue_free()
+	pass
+
+# Shooting
 func shoot():
 	var pos_front = get_node("guns/front").get_global_position()
 	create_laser(pos_front)

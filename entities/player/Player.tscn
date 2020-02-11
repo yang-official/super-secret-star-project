@@ -10,6 +10,7 @@ __meta__ = {
 "_edit_group_": true
 }
 MOVE_SPEED = 500
+HP = 2
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
