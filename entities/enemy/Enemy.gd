@@ -5,6 +5,7 @@ extends Area2D
 
 export var HP = 2 setget set_HP
 export var velocity = Vector2()
+const explosion = preload("res://entities/effects/explosion.tscn")
 
 func _ready():
 	set_process(true)
@@ -21,10 +22,19 @@ func _process(delta):
 func set_HP(new_value):
 	HP = new_value
 	if HP <= 0:
+		create_explosion()
 		queue_free()
 	pass
 
 func _on_area_entered(other):
 	if other.is_in_group("player"):
 		other.HP -= 1
+		create_explosion()
 		queue_free()
+
+func create_explosion():
+	var stage_node = get_parent()
+	var explosion_instance = explosion.instance()
+	explosion_instance.position = position
+	stage_node.add_child(explosion_instance)
+	pass

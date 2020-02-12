@@ -1,7 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/sprites/effects/explosion.png" type="Texture" id=1]
+[ext_resource path="res://entities/effects/explosion.gd" type="Script" id=2]
 
 [node name="explosion" type="Sprite"]
+position = Vector2( 210.468, 175.648 )
 z_index = 5
 texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="queue_free_timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+autostart = true
+[connection signal="timeout" from="queue_free_timer" to="." method="queue_free"]

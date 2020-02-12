@@ -6,6 +6,7 @@ extends Area2D
 export var MOVE_SPEED = 400
 export var HP = 10 setget set_HP
 const laser_one = preload("res://entities/gun/laser_one.tscn")
+const explosion = preload("res://entities/effects/explosion.tscn")
 var can_shoot = true
 
 func _ready():
@@ -47,6 +48,7 @@ func _process(delta):
 func set_HP(new_value):
 	HP = new_value
 	if HP <= 0:
+		create_explosion()
 		queue_free()
 	pass
 
@@ -65,4 +67,11 @@ func create_laser(pos):
 	var laser = laser_one.instance()
 	laser.set_position(pos)
 	stage_node.add_child(laser)
+	pass
+
+func create_explosion():
+	var stage_node = get_parent()
+	var explosion_instance = explosion.instance()
+	explosion_instance.position = position
+	stage_node.add_child(explosion_instance)
 	pass
