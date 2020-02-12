@@ -9,6 +9,8 @@ const laser_one = preload("res://entities/gun/laser_one.tscn")
 const explosion = preload("res://entities/effects/explosion.tscn")
 var can_shoot = true
 
+signal hp_change
+
 func _ready():
 	set_process(true)
 	add_to_group("player")
@@ -47,6 +49,7 @@ func _process(delta):
 # Health
 func set_HP(new_value):
 	HP = new_value
+	emit_signal("hp_change", HP)
 	if HP <= 0:
 		create_explosion()
 		queue_free()
