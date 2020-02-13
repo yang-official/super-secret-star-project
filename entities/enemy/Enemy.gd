@@ -23,12 +23,13 @@ func set_HP(new_value):
 	HP = new_value
 	if HP <= 0:
 		create_explosion()
+		get_node("/root/demo_level/HUD/score").score += 5
 		queue_free()
 	pass
 
 func _on_area_entered(other):
 	if other.is_in_group("player"):
-		other.HP -= 1
+		other.hp -= 1
 		create_explosion()
 		queue_free()
 

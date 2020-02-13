@@ -8,6 +8,6 @@ func _ready():
 
 func _on_area_entered(other):
 	if other.is_in_group("player"):
-		other.HP -= 1
+		other.hp -= 1
 		queue_free()
 	pass

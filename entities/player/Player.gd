@@ -4,12 +4,16 @@
 extends Area2D
 
 export var MOVE_SPEED = 400
-export var HP = 10 setget set_HP
+export var MAX_HP = 10
+onready var hp = MAX_HP setget _set_HP
+onready var invulnerability_timer = $invulnerability_timer
+onready var effects_animation = $effects_animation
 const laser_one = preload("res://entities/gun/laser_one.tscn")
 const explosion = preload("res://entities/effects/explosion.tscn")
 var can_shoot = true
 
-signal hp_change
+signal hp_updated(hp)
+signal destroyed()
 
 func _ready():
 	set_process(true)
@@ -46,12 +50,22 @@ func _process(delta):
 		shoot()
 		get_node("guns/reload_timer").start()
 
+# Damage handling
+func damage(amount):
+	if invulnerability_timer.is_stopped():
+		invulnerability_timer.start()
+		_set_HP(hp - amount)
+		effects_animation.play("damage_flash")
+
 # Health
-func set_HP(new_value):
-	HP = new_value
-	emit_signal("hp_change", HP)
-	if HP <= 0:
+func _set_HP(new_value):
+	var prev_hp = hp
+	hp = clamp(new_value, 0, MAX_HP)
+	if hp != prev_hp:
+		emit_signal("hp_updated", hp)
+	if hp <= 0:
 		create_explosion()
+		emit_signal("destroyed")
 		queue_free()
 	pass
 
