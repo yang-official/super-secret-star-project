@@ -4,7 +4,7 @@
 extends Node2D
 
 const drops = [
-	preload("res://entities/powerups/powerup.tscn")
+	preload("res://entities/powerups/powerup_hp.tscn")
 ]
 func _ready():
 	spawn()
