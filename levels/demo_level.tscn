@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/sprites/levels/background.png" type="Texture" id=1]
 [ext_resource path="res://levels/background.gd" type="Script" id=2]
 [ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://levels/spawn_enemies.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/sprites/hud/buttonRed.png" type="Texture" id=5]
-[ext_resource path="res://levels/health.gd" type="Script" id=6]
-[ext_resource path="res://assets/sprites/hud/buttonBlue.png" type="Texture" id=7]
-[ext_resource path="res://levels/score.gd" type="Script" id=8]
+[ext_resource path="res://levels/spawn_drops.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/sprites/hud/buttonRed.png" type="Texture" id=6]
+[ext_resource path="res://levels/health.gd" type="Script" id=7]
+[ext_resource path="res://assets/sprites/hud/buttonBlue.png" type="Texture" id=8]
+[ext_resource path="res://levels/score.gd" type="Script" id=9]
 
 [node name="demo_level" type="Node2D"]
 
@@ -18,9 +19,13 @@ scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
+[node name="Player" parent="." groups=[
+"player",
+] instance=ExtResource( 3 )]
 
 [node name="spawn_enemies" parent="." instance=ExtResource( 4 )]
+
+[node name="spawn_drops" parent="." instance=ExtResource( 5 )]
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -29,7 +34,7 @@ margin_left = 20.0
 margin_top = 10.0
 margin_right = 242.0
 margin_bottom = 50.0
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="HP_text" type="Label" parent="HUD"]
 margin_left = 40.0
@@ -51,14 +56,14 @@ rect_scale = Vector2( 2, 2 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 align = 1
 valign = 1
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
 [node name="tex_score" type="TextureRect" parent="HUD"]
 margin_left = 400.0
 margin_top = 10.0
 margin_right = 622.0
 margin_bottom = 50.0
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="score" type="Label" parent="HUD"]
 margin_left = 570.0
@@ -70,7 +75,7 @@ custom_colors/font_color = Color( 0, 0, 1, 1 )
 text = "0"
 align = 1
 valign = 1
-script = ExtResource( 8 )
+script = ExtResource( 9 )
 
 [node name="score_text" type="Label" parent="HUD"]
 margin_left = 420.0
