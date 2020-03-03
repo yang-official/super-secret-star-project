@@ -1,19 +1,30 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/sprites/hud/buttonGreen.png" type="Texture" id=1]
+[ext_resource path="res://entities/dialogue/dialogue.gd" type="Script" id=2]
 
-[node name="dialogue_box" type="Area2D"]
+[node name="dialogue_box" type="Polygon2D"]
 position = Vector2( 320, 850 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 2.5, 4 )
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="dialogue" type="RichTextLabel" parent="."]
 margin_left = -250.0
 margin_top = -50.0
 margin_right = 250.0
 margin_bottom = 50.0
+custom_colors/default_color = Color( 0.223529, 0, 0, 1 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+[connection signal="timeout" from="Timer" to="dialogue" method="_on_Timer_timeout"]
