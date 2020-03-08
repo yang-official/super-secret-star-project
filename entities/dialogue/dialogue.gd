@@ -4,10 +4,9 @@ extends RichTextLabel
 var page = 0
 
 var dialogue_file_path = "res://assets/text/dialogue.json"
-var dialogue : Dictionary = load_dialogue(dialogue_file_path)
 
 func _ready():
-	var dialogue : Dictionary = load_dialogue(dialogue_file_path)
+	var dialogue = load_dialogue(dialogue_file_path)
 	set_bbcode(dialogue[page]["text"])
 	set_visible_characters(0)
 	set_process_input(true)
@@ -18,10 +17,12 @@ func load_dialogue(file_path) -> Dictionary:
 	assert file.file_exists(file_path)
 	file.open(file_path, file.READ)
 	var dialogue = parse_json(file.get_as_text())
+	print(dialogue)
 	assert dialogue.size() > 0
 	return dialogue
 
 func _input(event):
+	var dialogue = load_dialogue(dialogue_file_path)
 	if event is InputEventKey and event.get_scancode() == KEY_SPACE && event.is_pressed():
 		if get_visible_characters() > get_total_character_count():
 			if page < dialogue.size() - 1:
