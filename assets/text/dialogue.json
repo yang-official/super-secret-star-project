@@ -1,29 +1,29 @@
 {
-  1 : {
+  "0" : {
     "name": "Karen", "expression": "neutral", "text":
     "AI Initializing... Initialization complete. IRIS class AI ready for duty. Good morning, Captain."
   },
-  2: {
+  "1": {
     "name": "Jack", "expression": "smiling", "text":
     "Good morning, Karen, what do we have scheduled for today?"
   },
-  3: {
+  "2": {
     "name": "Karen", "expression": "neutral", "text":
     "A standard scouting and raiding mission."
   },
-  4: {
+  "3": {
     "name": "Jack", "expression": "smiling", "text":
     "Well that sounds simple enough. Let's get to it then!"
   },
-  5: {
+  "4": {
     "name": "Karen", "expression": "neutral", "text":
     "Wait a moment, Captain. We still have remaining funds from our previous run."
   },
-  6: {
+  "5": {
     "name": "Karen", "expression": "neutral", "text":
     "I would recommend using some of those funds to purchase upgrades prior to today's mission."
   },
-  7: {
+  "6": {
     "name": "Jack", "expression": "smiling", "text":
     "Want some more toys to play with, Karen? Alright, let's see what the mechanics have on sale."
   },
