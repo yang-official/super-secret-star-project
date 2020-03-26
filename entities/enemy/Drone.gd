@@ -6,7 +6,8 @@ const laser_drone = preload("res://entities/gun/laser_drone.tscn")
 var can_shoot = true
 var view_size = get_viewport_rect().size
 const drops = [
-	preload("res://entities/powerups/powerup_hp.tscn")
+	preload("res://entities/powerups/powerup_hp.tscn"),
+	preload("res://entities/powerups/powerup_money.tscn")
 ]
 
 func _ready():
@@ -25,7 +26,6 @@ func set_HP(new_value):
 	HP = new_value
 	if HP <= 0:
 		create_explosion()
-		get_node("/root/demo_level/HUD/score").score += 10
 		spawn_drop()
 		queue_free()
 	pass
@@ -48,6 +48,10 @@ func create_laser(pos):
 func spawn_drop():
 	var pos = get_node("gun").get_global_position()
 	var stage_node = get_parent()
-	var drop = drops[0].instance()
-	drop.set_position(pos)
-	stage_node.add_child(drop)
+	randomize()
+	var i = randi() % 3
+	i = 1
+	if i < 2:
+		var drop = drops[i].instance()
+		drop.set_position(pos)
+		stage_node.add_child(drop)

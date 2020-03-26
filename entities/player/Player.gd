@@ -5,6 +5,8 @@ extends Area2D
 
 export var MOVE_SPEED = 400
 export var MAX_HP = 10
+export var MONEY = 999
+export var money = 0
 onready var hp = MAX_HP setget _set_HP
 onready var invulnerability_timer = $invulnerability_timer
 onready var effects_animation = $effects_animation
@@ -13,6 +15,7 @@ const explosion = preload("res://entities/effects/explosion.tscn")
 var can_shoot = true
 
 signal hp_updated(hp)
+signal money_updated(money)
 signal destroyed()
 
 func _ready():
@@ -55,6 +58,7 @@ func damage(amount):
 	if invulnerability_timer.is_stopped():
 		invulnerability_timer.start()
 		_set_HP(hp - amount)
+		_set_money(money)
 		effects_animation.play("damage_flash")
 
 # Health
@@ -67,6 +71,14 @@ func _set_HP(new_value):
 		create_explosion()
 		emit_signal("destroyed")
 		queue_free()
+	pass
+
+# Money
+func _set_money(new_value):
+	var prev_money = money
+	money = clamp(new_value, 0, MAX_HP)
+	if money != prev_money:
+		emit_signal("money_updated", money)
 	pass
 
 # Shooting front cannon

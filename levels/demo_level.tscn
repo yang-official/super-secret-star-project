@@ -72,7 +72,6 @@ margin_right = 590.0
 margin_bottom = 30.0
 rect_scale = Vector2( 2, 2 )
 custom_colors/font_color = Color( 0, 0, 1, 1 )
-text = "0"
 align = 1
 valign = 1
 script = ExtResource( 9 )
@@ -84,7 +83,8 @@ margin_right = 461.0
 margin_bottom = 30.0
 rect_scale = Vector2( 2, 2 )
 custom_colors/font_color = Color( 0, 0, 1, 1 )
-text = "SCORE"
+text = "MONEY"
 align = 1
 valign = 1
 [connection signal="hp_updated" from="Player" to="HUD/health" method="_on_Player_hp_updated"]
+[connection signal="money_updated" from="Player" to="HUD/score" method="_on_Player_money_updated"]

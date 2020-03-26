@@ -8,10 +8,15 @@ func _ready():
 #func _process(delta):
 #	pass
 
-# Drops and pickups spawn on destruction
+# DONE: Drops and pickups spawn on destruction
 # Cutscene system
-# Money and upgrade system
+# Money system
+# Upgrade system
+# GUNS
 # Custom non-random spawns
 # Main Menu
 # Level Select Hub
 # Sounds
+
+# Lower priorities:
+# Damage animations

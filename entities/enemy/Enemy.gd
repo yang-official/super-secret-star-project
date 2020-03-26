@@ -23,7 +23,6 @@ func set_HP(new_value):
 	HP = new_value
 	if HP <= 0:
 		create_explosion()
-		get_node("/root/demo_level/HUD/score").score += 5
 		queue_free()
 	pass
 
