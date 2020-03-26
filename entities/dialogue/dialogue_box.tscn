@@ -9,9 +9,9 @@ size = 24
 font_data = ExtResource( 2 )
 
 [node name="dialogue_box" type="Polygon2D"]
-position = Vector2( 320, 850 )
+position = Vector2( 320, 860 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="dialogueBG" type="Sprite" parent="."]
 scale = Vector2( 2.5, 4 )
 texture = ExtResource( 1 )
 __meta__ = {
@@ -34,4 +34,26 @@ __meta__ = {
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.05
 autostart = true
+
+[node name="nameBG" type="Sprite" parent="."]
+position = Vector2( -160, -100 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="name" type="RichTextLabel" parent="."]
+margin_left = -260.0
+margin_top = -110.0
+margin_right = -60.0
+margin_bottom = -85.0
+
+[node name="portrait" type="TextureRect" parent="."]
+margin_left = 40.0
+margin_top = -300.0
+margin_right = 270.0
+margin_bottom = -80.0
+__meta__ = {
+"_edit_group_": true
+}
 [connection signal="timeout" from="Timer" to="dialogue" method="_on_Timer_timeout"]

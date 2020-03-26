@@ -7,7 +7,7 @@ const drops = [
 	preload("res://entities/powerups/powerup_hp.tscn")
 ]
 func _ready():
-	spawn()
+#	spawn()
 	pass
 
 func spawn():

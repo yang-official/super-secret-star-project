@@ -6,8 +6,8 @@ var dialogue_file_path = "res://assets/text/dialogue.json"
 func _ready():
 	var dialogue = load_dialogue(dialogue_file_path)
 	set_bbcode(dialogue[page]["text"])
-	#set_visible_characters(0)
-	#set_process_input(true)
+	set_visible_characters(0)
+	set_process_input(true)
 
 func load_dialogue(file_path) -> Dictionary:
 	# Parses JSON file and returns it as a dictionary
