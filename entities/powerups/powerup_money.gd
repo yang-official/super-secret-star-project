@@ -9,4 +9,5 @@ func _ready():
 func _on_area_entered(other):
 	if other.is_in_group("player"):
 		other.money += 10
+		other.emit_signal("money_updated", other.money)
 		queue_free()

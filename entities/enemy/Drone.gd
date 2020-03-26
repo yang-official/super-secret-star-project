@@ -50,7 +50,6 @@ func spawn_drop():
 	var stage_node = get_parent()
 	randomize()
 	var i = randi() % 3
-	i = 1
 	if i < 2:
 		var drop = drops[i].instance()
 		drop.set_position(pos)
