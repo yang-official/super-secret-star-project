@@ -6,9 +6,6 @@ extends Area2D
 export var HP = 2 setget set_HP
 export var velocity = Vector2()
 const explosion = preload("res://entities/effects/explosion.tscn")
-const drops = [
-	preload("res://entities/powerups/powerup_hp.tscn")
-]
 
 func _ready():
 	set_process(true)
@@ -27,9 +24,6 @@ func set_HP(new_value):
 	if HP <= 0:
 		create_explosion()
 		get_node("/root/demo_level/HUD/score").score += 5
-		var drop = drops[0].instance()
-		drop.set_position(get_position())
-		#get_node("demo_level").add_child(drop)
 		queue_free()
 	pass
 
