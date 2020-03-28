@@ -8,6 +8,11 @@ func _ready():
 #func _process(delta):
 #	pass
 
+# Primary Loop: move ship around and shoot
+# Secondary Loop: blow up enemies, collect drops
+# Tertiary Loop: spend drops to shoot better
+# Quarternary Loop: clear levels to unlock story
+
 # DONE: Drops and pickups spawn on destruction
 # Cutscene system
 # Money system
