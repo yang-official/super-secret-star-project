@@ -20,6 +20,7 @@ func _process(delta):
 	if get_position().x > view_size.x - 40:
 		velocity.x = -velocity.x
 	if can_shoot:
+		$enemy_gun_sound.play()
 		shoot()
 
 func set_HP(new_value):

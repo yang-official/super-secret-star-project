@@ -9,5 +9,6 @@ func _ready():
 func _on_area_entered(other):
 	if other.is_in_group("enemy"):
 		other.HP -= 1
+		$hit_sound.play()
 		queue_free()
 	pass

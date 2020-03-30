@@ -31,6 +31,21 @@ __meta__ = {
 "_edit_group_": true
 }
 
+[node name="name" type="RichTextLabel" parent="dialogue"]
+margin_left = -10.0
+margin_top = -60.0
+margin_right = 190.0
+margin_bottom = -35.0
+
+[node name="portrait" type="TextureRect" parent="dialogue"]
+margin_left = 290.0
+margin_top = -250.0
+margin_right = 520.0
+margin_bottom = -30.0
+__meta__ = {
+"_edit_group_": true
+}
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.05
 autostart = true
@@ -38,21 +53,6 @@ autostart = true
 [node name="nameBG" type="Sprite" parent="."]
 position = Vector2( -160, -100 )
 texture = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="name" type="RichTextLabel" parent="."]
-margin_left = -260.0
-margin_top = -110.0
-margin_right = -60.0
-margin_bottom = -85.0
-
-[node name="portrait" type="TextureRect" parent="."]
-margin_left = 40.0
-margin_top = -300.0
-margin_right = 270.0
-margin_bottom = -80.0
 __meta__ = {
 "_edit_group_": true
 }

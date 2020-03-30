@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Rolemusic_-_01_-_Shipwreck_In_The_Pacific_Ocean.ogg-5cd393c0b36857f4ea31a2ac8b65132e.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/Rolemusic_-_01_-_Shipwreck_In_The_Pacific_Ocean.ogg"
+dest_files=[ "res://.import/Rolemusic_-_01_-_Shipwreck_In_The_Pacific_Ocean.ogg-5cd393c0b36857f4ea31a2ac8b65132e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -51,6 +51,7 @@ func _process(delta):
 	# shooting
 	if Input.is_key_pressed(KEY_SPACE) and can_shoot:
 		shoot()
+		$gun_sound.play()
 		get_node("guns/reload_timer").start()
 
 # Damage handling
@@ -66,10 +67,15 @@ func _set_HP(new_value):
 	hp = clamp(new_value, 0, MAX_HP)
 	if hp != prev_hp:
 		emit_signal("hp_updated", hp)
+		if hp < prev_hp:
+			$hit_sound.play()
+		else:
+			$acquire_sound.play()
 	if hp <= 0:
 		create_explosion()
 		emit_signal("destroyed")
 		queue_free()
+		get_tree().change_scene("res://levels/demo_game_over.tscn")
 	pass
 
 # Shooting front cannon

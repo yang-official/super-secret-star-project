@@ -12,3 +12,9 @@ func _process(delta):
 	if get_position().y - 20 >= get_viewport_rect().size.y:
 		queue_free()
 	pass
+	
+func _on_area_entered(other):
+	if other.is_in_group("player"):
+		$acquire_sound.play()
+		other.hp += 1
+		queue_free()

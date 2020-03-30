@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://entities/gun/laser.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/gun/laser_one.gd" type="Script" id=2]
 [ext_resource path="res://assets/sprites/gun/laserRed01.png" type="Texture" id=3]
+[ext_resource path="res://assets/sounds/hit_enemy.wav" type="AudioStream" id=4]
 
 [node name="laser_one" instance=ExtResource( 1 )]
 position = Vector2( 304.988, 872.743 )
@@ -14,3 +15,6 @@ texture = ExtResource( 3 )
 
 [node name="VisibilityNotifier2D" parent="." index="2"]
 rect = Rect2( -10, -30, 20, 60 )
+
+[node name="hit_sound" type="AudioStreamPlayer2D" parent="." index="3"]
+stream = ExtResource( 4 )

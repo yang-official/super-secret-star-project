@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/sprites/levels/background.png" type="Texture" id=1]
+[ext_resource path="res://levels/background.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/kenvector_future.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://levels/game_over_menu.gd" type="Script" id=4]
+[ext_resource path="res://assets/sounds/rolemusi_-_03_-_The_White.ogg" type="AudioStream" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 3 )
+
+[node name="demo_game_over" type="Node2D"]
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 312.386, -320 )
+rotation = 1.5708
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Title" type="Label" parent="."]
+margin_left = 30.0
+margin_top = 130.0
+margin_right = 601.0
+margin_bottom = 247.0
+custom_fonts/font = SubResource( 1 )
+text = "GAME OVER"
+align = 1
+valign = 1
+
+[node name="game_over_menu" type="Control" parent="."]
+margin_right = 640.0
+margin_bottom = 960.0
+script = ExtResource( 4 )
+
+[node name="menu_screen" type="Button" parent="game_over_menu"]
+margin_left = 210.0
+margin_top = 550.0
+margin_right = 420.0
+margin_bottom = 610.0
+custom_fonts/font = SubResource( 2 )
+text = "MENU"
+
+[node name="Restart" type="Button" parent="game_over_menu"]
+margin_left = 210.0
+margin_top = 690.0
+margin_right = 420.0
+margin_bottom = 750.0
+custom_fonts/font = SubResource( 2 )
+text = "RESTART"
+
+[node name="music" type="AudioStreamPlayer2D" parent="game_over_menu"]
+stream = ExtResource( 5 )
+[connection signal="pressed" from="game_over_menu/menu_screen" to="game_over_menu" method="_on_menu_screen_pressed"]
+[connection signal="pressed" from="game_over_menu/Restart" to="game_over_menu" method="_on_Restart_pressed"]
