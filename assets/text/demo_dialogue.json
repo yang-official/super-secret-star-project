@@ -1,0 +1,14 @@
+{
+  "0" : {
+    "name": "Karen", "expression": "neutral", "text":
+    "AI Initializing... Initialization complete. IRIS class AI, code name KAREN, ready for duty. Press SPACE to continue."
+  },
+  "1": {
+    "name": "Karen2", "expression": "neutral", "text":
+    "Good morning, Captain. Today, we are running a practice run against demo ships."
+  },
+  "2": {
+    "name": "Karen3", "expression": "neutral", "text":
+    "Use the directional arrow keys to move. Press SPACE to fire."
+  },
+}
