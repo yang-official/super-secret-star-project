@@ -31,6 +31,8 @@ func _input(event):
 				$Text.set_visible_characters(0)
 		else:
 			$Text.set_visible_characters($Text.get_total_character_count())
+		if int(page) >= dialogue.size():
+			get_parent().queue_free()
 
 func _on_Timer_timeout():
 	$Text.set_visible_characters($Text.get_visible_characters()+1)

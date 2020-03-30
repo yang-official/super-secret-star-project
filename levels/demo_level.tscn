@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://levels/demo_level.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/levels/background.png" type="Texture" id=2]
@@ -16,6 +16,14 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
 font_data = ExtResource( 13 )
 
 [node name="demo_level" type="Node2D"]
@@ -117,11 +125,29 @@ anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0.392157 )
 
 [node name="Paused" type="Label" parent="Menus/Pause"]
-margin_left = 230.0
-margin_top = 440.0
-margin_right = 428.0
-margin_bottom = 485.0
+margin_left = 240.0
+margin_top = 320.0
+margin_right = 438.0
+margin_bottom = 365.0
 custom_fonts/font = SubResource( 1 )
 text = "PAUSED"
+
+[node name="Menu" type="Button" parent="Menus/Pause"]
+margin_left = 220.0
+margin_top = 580.0
+margin_right = 439.0
+margin_bottom = 660.0
+custom_fonts/font = SubResource( 2 )
+text = "Main Menu"
+
+[node name="Unpause" type="Button" parent="Menus/Pause"]
+margin_left = 220.0
+margin_top = 500.0
+margin_right = 440.0
+margin_bottom = 560.0
+custom_fonts/font = SubResource( 3 )
+text = "Unpause"
 [connection signal="hp_updated" from="Player" to="HUD/tex_health/health" method="_on_Player_hp_updated"]
 [connection signal="money_updated" from="Player" to="HUD/tex_score/score" method="_on_Player_money_updated"]
+[connection signal="pressed" from="Menus/Pause/Menu" to="Menus/Pause" method="_on_Menu_pressed"]
+[connection signal="pressed" from="Menus/Pause/Unpause" to="Menus/Pause" method="_on_Unpause_pressed"]
