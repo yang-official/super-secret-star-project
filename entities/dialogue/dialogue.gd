@@ -4,6 +4,8 @@ var page = "0"
 var dialogue_file_path = "res://assets/text/demo_dialogue.json"
 
 func _ready():
+	get_tree().paused = true
+	$dialogue_music.play()
 	var dialogue = load_dialogue(dialogue_file_path)
 	$Text.set_bbcode(dialogue[page]["text"])
 	$Name.set_text(dialogue[page]["name"])
@@ -29,10 +31,14 @@ func _input(event):
 				$Text.set_bbcode(dialogue[page]["text"])
 				$Name.set_text(dialogue[page]["name"])
 				$Text.set_visible_characters(0)
+			elif int(page) >= dialogue.size() - 1:
+				get_tree().paused = false
+				get_parent().queue_free()
 		else:
 			$Text.set_visible_characters($Text.get_total_character_count())
-		if int(page) >= dialogue.size():
-			get_parent().queue_free()
+	if event is InputEventKey and event.get_scancode() == KEY_ESCAPE && event.is_pressed():
+		get_tree().paused = false
+		get_parent().queue_free()
 
 func _on_Timer_timeout():
 	$Text.set_visible_characters($Text.get_visible_characters()+1)

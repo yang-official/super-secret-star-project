@@ -1,14 +1,26 @@
 {
   "0" : {
     "name": "Karen", "expression": "neutral", "text":
-    "AI Initializing... Initialization complete. IRIS class AI, code name KAREN, ready for duty. Press SPACE to continue."
+    "AI Initializing... Press SPACE to continue or ESC to skip."
   },
   "1": {
-    "name": "Karen2", "expression": "neutral", "text":
-    "Good morning, Captain. Today, we are running a practice run against demo ships."
+    "name": "Karen", "expression": "neutral", "text":
+    "Initialization complete. IRIS class AI, designation KAREN, ready for duty. Good morning, Captain."
   },
   "2": {
-    "name": "Karen3", "expression": "neutral", "text":
-    "Use the directional arrow keys to move. Press SPACE to fire."
+    "name": "Captain", "expression": "neutral", "text":
+    "Good morning, Karen. What do we have today?"
+  },
+  "3": {
+    "name": "Karen", "expression": "neutral", "text":
+    "Good morning, Captain. Today, we are running a practice run against demo ships."
+  },
+  "4": {
+    "name": "Karen", "expression": "neutral", "text":
+    "Use the directional arrow keys to move. Press SPACE to fire. Press ESC to pause."
+  },
+  "5": {
+    "name": "Karen", "expression": "neutral", "text":
+    "Since this a demo, the demo ships endlessly spawn until you press ESC."
   },
 }

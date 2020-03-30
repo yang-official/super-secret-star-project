@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/sprites/hud/buttonGreen.png" type="Texture" id=1]
 [ext_resource path="res://entities/dialogue/dialogue.gd" type="Script" id=2]
 [ext_resource path="res://assets/fonts/kenvector_future.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/sounds/rolemusi_-_03_-_The_White.ogg" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=2]
 size = 24
@@ -19,8 +20,8 @@ __meta__ = {
 }
 
 [node name="dialogueBG" type="Sprite" parent="."]
-position = Vector2( 0, -21 )
-scale = Vector2( 2.5, 5.07692 )
+position = Vector2( -1.71661e-005, -21 )
+scale = Vector2( 2.7027, 5.07692 )
 texture = ExtResource( 1 )
 
 [node name="nameBG" type="Sprite" parent="."]
@@ -28,11 +29,8 @@ position = Vector2( -160, -145.25 )
 scale = Vector2( 1, 1.26923 )
 texture = ExtResource( 1 )
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.05
-autostart = true
-
 [node name="dialogue" type="Control" parent="."]
+pause_mode = 2
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 2 )
@@ -53,11 +51,18 @@ margin_right = 270.0
 margin_bottom = -130.0
 
 [node name="Text" type="RichTextLabel" parent="dialogue"]
-margin_left = -250.0
+margin_left = -271.0
 margin_top = -100.0
-margin_right = 250.0
+margin_right = 280.0
 margin_bottom = 60.0
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0.223529, 0, 0, 1 )
 text = "Test"
-[connection signal="timeout" from="Timer" to="dialogue" method="_on_Timer_timeout"]
+
+[node name="Timer" type="Timer" parent="dialogue"]
+wait_time = 0.05
+autostart = true
+
+[node name="dialogue_music" type="AudioStreamPlayer2D" parent="dialogue"]
+stream = ExtResource( 4 )
+[connection signal="timeout" from="dialogue/Timer" to="dialogue" method="_on_Timer_timeout"]

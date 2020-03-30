@@ -19,9 +19,6 @@ func _ready():
 # Upgrade system
 # GUNS
 # Custom non-random spawns
-# Main Menu
+# DONE: Main Menu
 # Level Select Hub
-# Sounds
-
-# Lower priorities:
-# Damage animations
+# DONEish: Sounds

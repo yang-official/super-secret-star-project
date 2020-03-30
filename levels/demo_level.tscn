@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://levels/demo_level.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/levels/background.png" type="Texture" id=2]
@@ -11,20 +11,21 @@
 [ext_resource path="res://assets/sprites/hud/buttonBlue.png" type="Texture" id=9]
 [ext_resource path="res://levels/score.gd" type="Script" id=10]
 [ext_resource path="res://assets/sounds/rolemu_-_04_-_The_Black_Kitty.ogg" type="AudioStream" id=11]
-[ext_resource path="res://levels/Pause.gd" type="Script" id=12]
-[ext_resource path="res://assets/fonts/kenvector_future.ttf" type="DynamicFontData" id=13]
+[ext_resource path="res://entities/dialogue/dialogue_box.tscn" type="PackedScene" id=12]
+[ext_resource path="res://levels/Pause.gd" type="Script" id=13]
+[ext_resource path="res://assets/fonts/kenvector_future.ttf" type="DynamicFontData" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
-font_data = ExtResource( 13 )
+font_data = ExtResource( 14 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 30
-font_data = ExtResource( 13 )
+font_data = ExtResource( 14 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 30
-font_data = ExtResource( 13 )
+font_data = ExtResource( 14 )
 
 [node name="demo_level" type="Node2D"]
 script = ExtResource( 1 )
@@ -45,12 +46,13 @@ script = ExtResource( 3 )
 [node name="spawn_drops" parent="." instance=ExtResource( 6 )]
 
 [node name="HUD" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="tex_health" type="TextureRect" parent="HUD"]
 margin_left = 20.0
-margin_top = 910.0
+margin_top = 900.0
 margin_right = 242.0
-margin_bottom = 950.0
+margin_bottom = 940.0
 texture = ExtResource( 7 )
 __meta__ = {
 "_edit_group_": true
@@ -78,9 +80,9 @@ script = ExtResource( 8 )
 
 [node name="tex_score" type="TextureRect" parent="HUD"]
 margin_left = 400.0
-margin_top = 910.0
+margin_top = 900.0
 margin_right = 622.0
-margin_bottom = 950.0
+margin_bottom = 940.0
 texture = ExtResource( 9 )
 __meta__ = {
 "_edit_group_": true
@@ -112,12 +114,14 @@ autoplay = true
 
 [node name="Menus" type="CanvasLayer" parent="."]
 
+[node name="dialogue_box" parent="Menus" instance=ExtResource( 12 )]
+
 [node name="Pause" type="Control" parent="Menus"]
 pause_mode = 2
 visible = false
 margin_right = 640.0
 margin_bottom = 960.0
-script = ExtResource( 12 )
+script = ExtResource( 13 )
 
 [node name="BlackOverlay" type="ColorRect" parent="Menus/Pause"]
 anchor_right = 1.0

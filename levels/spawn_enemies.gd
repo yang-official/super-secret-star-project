@@ -19,6 +19,7 @@ func spawn():
 		pos.x = rand_range(0+50, get_viewport().get_visible_rect().size.x - 50)
 		pos.y = 0 - 40
 		enemy.set_position(pos)
-		get_node("container").add_child(enemy)
+		if not get_tree().paused:
+			get_node("container").add_child(enemy)
 		yield(get_tree().create_timer(rand_range(1.5, 2.25)), "timeout")
 	pass
