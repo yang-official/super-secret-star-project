@@ -14,7 +14,7 @@ func _ready():
 # Quarternary Loop: clear levels to unlock story
 
 # DONE: Drops and pickups spawn on destruction
-# Cutscene system
+# DONE: Cutscene system
 # Money system
 # Upgrade system
 # GUNS

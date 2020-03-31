@@ -6,7 +6,6 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$music.play()
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -14,11 +13,5 @@ func _ready():
 #	pass
 
 
-func _on_Start_pressed():
-	get_tree().change_scene("res://levels/demo_level.tscn")
-
-func _on_Quit_pressed():
-	get_tree().quit()
-
-func _on_Credits_pressed():
-	get_tree().change_scene("res://levels/demo_credits.tscn")
+func _on_back_pressed():
+	get_tree().change_scene("res://levels/demo_menu.tscn")

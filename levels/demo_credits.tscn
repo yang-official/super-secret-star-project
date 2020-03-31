@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/sprites/levels/background.png" type="Texture" id=1]
+[ext_resource path="res://levels/background.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/kenvector_future.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://levels/credits.gd" type="Script" id=4]
+[ext_resource path="res://assets/sounds/Rolemusic_-_01_-_Shipwreck_In_The_Pacific_Ocean.ogg" type="AudioStream" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 3 )
+
+[node name="demo_credits" type="Node2D"]
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 312.386, -320 )
+rotation = 1.5708
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Title" type="Label" parent="."]
+margin_left = 40.0
+margin_top = 130.0
+margin_right = 611.0
+margin_bottom = 247.0
+custom_fonts/font = SubResource( 1 )
+text = "CREDITS"
+align = 1
+valign = 1
+
+[node name="credits" type="Control" parent="."]
+margin_right = 640.0
+margin_bottom = 960.0
+script = ExtResource( 4 )
+
+[node name="back" type="Button" parent="credits"]
+margin_left = 210.0
+margin_top = 690.0
+margin_right = 420.0
+margin_bottom = 750.0
+custom_fonts/font = SubResource( 2 )
+text = "BACK"
+
+[node name="music" type="AudioStreamPlayer2D" parent="credits"]
+stream = ExtResource( 5 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 70.0
+margin_top = 260.0
+margin_right = 580.0
+margin_bottom = 650.0
+custom_fonts/normal_font = SubResource( 3 )
+text = "Placeholder art assets and fonts are taken from Kenney's Space Shooter Redux asset pack and the companion to Manzur's Godot in 24 Hours book.
+Placeholder sounds and music are from Angega Studios and Rolemusic.
+All placeholder assets used are either public domain or used under creative commons attribution license, and will be replaced by custom assets for the final project."
+[connection signal="pressed" from="credits/back" to="credits" method="_on_back_pressed"]
