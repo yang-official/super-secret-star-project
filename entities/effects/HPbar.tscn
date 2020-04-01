@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://entities/effects/HPbar.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/effects/under.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/effects/over.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/effects/bar.png" type="Texture" id=4]
+
+[node name="HPbar" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="HPbar" type="TextureProgress" parent="."]
+margin_right = 218.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_under = ExtResource( 2 )
+texture_over = ExtResource( 3 )
+texture_progress = ExtResource( 4 )

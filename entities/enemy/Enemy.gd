@@ -7,6 +7,9 @@ export var HP = 2 setget set_HP
 export var velocity = Vector2()
 const explosion = preload("res://entities/effects/explosion.tscn")
 
+signal hp_updated(hp)
+signal MAX_HP_updated(MAX_HP)
+
 func _ready():
 	set_process(true)
 	add_to_group("enemy")

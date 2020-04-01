@@ -16,6 +16,7 @@ var can_shoot = true
 
 signal hp_updated(hp)
 signal money_updated(money)
+signal max_hp_updated(MAX_HP)
 signal destroyed()
 
 func _ready():
