@@ -15,11 +15,11 @@ func _ready():
 func load_dialogue(file_path) -> Dictionary:
 	# Parses JSON file and returns it as a dictionary
 	var file = File.new()
-	assert file.file_exists(file_path)
+	assert(file.file_exists(file_path))
 	file.open(file_path, file.READ)
 	var file_text = file.get_as_text()
 	var dialogue = parse_json(file_text)
-	assert dialogue.size() > 0
+	assert(dialogue.size() > 0)
 	return dialogue
 
 func _input(event):
