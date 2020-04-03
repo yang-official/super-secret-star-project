@@ -74,4 +74,5 @@ margin_top = 40.0782
 margin_right = -55.1405
 margin_bottom = 40.0782
 [connection signal="hp_updated" from="." to="HPbar" method="_on_Player_hp_updated"]
+[connection signal="max_hp_updated" from="." to="HPbar" method="_on_Player_max_hp_updated"]
 [connection signal="timeout" from="guns/reload_timer" to="." method="_on_reload_timer_timeout"]
