@@ -1,6 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://levels/sceneChanger.gd" type="Script" id=1]
+[ext_resource path="res://levels/common/sceneChanger.gd" type="Script" id=1]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "modulate"
@@ -30,7 +31,7 @@ __meta__ = {
 }
 
 [node name="black" type="ColorRect" parent="Control"]
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color( 0.691245, 0.691245, 0.691245, 0.308755 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1.0
