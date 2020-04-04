@@ -8,7 +8,7 @@ const enemies = [
 	preload("res://entities/enemy/Drone.tscn")
 ]
 func _ready():
-	spawn()
+	#spawn()
 	pass
 
 func spawn():
