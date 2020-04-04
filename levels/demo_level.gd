@@ -12,8 +12,3 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func _on_End_area_entered(other):
-	if other.is_in_group("player"):
-		$Menus/sceneChanger.change_scene("res://levels/level2/level2.tscn")

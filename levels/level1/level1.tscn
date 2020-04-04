@@ -1,16 +1,15 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/sprites/hud/buttonRed.png" type="Texture" id=1]
 [ext_resource path="res://assets/sounds/rolemu_-_04_-_The_Black_Kitty.ogg" type="AudioStream" id=2]
 [ext_resource path="res://assets/sprites/hud/buttonBlue.png" type="Texture" id=3]
 [ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://levels/spawn_enemies.tscn" type="PackedScene" id=5]
-[ext_resource path="res://entities/dialogue/dialogue_box.tscn" type="PackedScene" id=6]
+[ext_resource path="res://levels/level1/level1.gd" type="Script" id=6]
 [ext_resource path="res://levels/spawn_drops.tscn" type="PackedScene" id=7]
 [ext_resource path="res://levels/background.gd" type="Script" id=8]
 [ext_resource path="res://assets/fonts/kenvector_future.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://assets/sprites/levels/background.png" type="Texture" id=10]
-[ext_resource path="res://levels/demo_level.gd" type="Script" id=11]
 [ext_resource path="res://levels/health.gd" type="Script" id=12]
 [ext_resource path="res://levels/Pause.gd" type="Script" id=13]
 [ext_resource path="res://levels/score.gd" type="Script" id=14]
@@ -32,7 +31,7 @@ size = 30
 font_data = ExtResource( 9 )
 
 [node name="level1" type="Node2D"]
-script = ExtResource( 11 )
+script = ExtResource( 6 )
 
 [node name="background" type="Sprite" parent="."]
 position = Vector2( 312.386, -320 )
@@ -42,7 +41,7 @@ texture = ExtResource( 10 )
 script = ExtResource( 8 )
 
 [node name="End" type="Area2D" parent="background"]
-position = Vector2( 40.9585, 2.10099 )
+position = Vector2( 114.008, 1.15202 )
 rotation = -1.5708
 scale = Vector2( 0.25, 0.25 )
 
@@ -136,8 +135,6 @@ stream = ExtResource( 2 )
 autoplay = true
 
 [node name="Menus" type="CanvasLayer" parent="."]
-
-[node name="dialogue_box" parent="Menus" instance=ExtResource( 6 )]
 
 [node name="Pause" type="Control" parent="Menus"]
 pause_mode = 2
