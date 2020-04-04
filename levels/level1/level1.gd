@@ -7,4 +7,4 @@ func _ready():
 
 func _on_End_area_entered(other):
 	if other.is_in_group("player"):
-		$Menus/sceneChanger.change_scene("res://levels/demo_menu.tscn")
+		$Menus/sceneChanger.change_scene("res://levels/demo_level.tscn")
