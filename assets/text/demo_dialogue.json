@@ -23,12 +23,4 @@
     "name": "Karen", "expression": "neutral", "text":
     "Pick up red health kits to restore HP and green pills to gain money."
   },
-  "6": {
-    "name": "Karen", "expression": "neutral", "text":
-    "Since this a demo, the demo ships endlessly spawn until you press ESC to pause and quit."
-  },
-  "7": {
-    "name": "Karen", "expression": "neutral", "text":
-    "Be sure to give feedback if you want to fly real missions in the future."
-  },
 }

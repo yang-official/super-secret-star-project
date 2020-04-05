@@ -9,6 +9,9 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HPbar" type="TextureProgress" parent="."]
 margin_right = 218.0
@@ -17,3 +20,6 @@ rect_scale = Vector2( 0.5, 0.5 )
 texture_under = ExtResource( 2 )
 texture_over = ExtResource( 3 )
 texture_progress = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,10 @@
+{
+  "0" : {
+    "name": "Karen", "expression": "neutral", "text":
+    "Congratulations on completing the demo, Captain."
+  },
+  "1": {
+    "name": "Karen", "expression": "neutral", "text":
+    "Be sure to give feedback if you want to fly real missions in the future."
+  },
+}

@@ -1,11 +1,12 @@
 extends Control
 
 var page = "0"
-var dialogue_file_path = "res://assets/text/demo_dialogue.json"
+export var file_name = "demo_dialogue.json"
 
 func _ready():
 	get_tree().paused = true
 	$dialogue_music.play()
+	var dialogue_file_path = "res://assets/text/" + file_name
 	var dialogue = load_dialogue(dialogue_file_path)
 	$Text.set_bbcode(dialogue[page]["text"])
 	$Name.set_text(dialogue[page]["name"])
@@ -23,6 +24,7 @@ func load_dialogue(file_path) -> Dictionary:
 	return dialogue
 
 func _input(event):
+	var dialogue_file_path = "res://assets/text/" + file_name
 	var dialogue = load_dialogue(dialogue_file_path)
 	if event is InputEventKey and event.get_scancode() == KEY_SPACE && event.is_pressed():
 		if $Text.get_visible_characters() > $Text.get_total_character_count():
