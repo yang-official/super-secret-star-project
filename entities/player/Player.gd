@@ -50,10 +50,11 @@ func _process(delta):
 	set_position(pos)
 	
 	# shooting
-	if Input.is_key_pressed(KEY_SPACE) and can_shoot:
-		shoot()
-		$gun_sound.play()
-		get_node("guns/reload_timer").start()
+	if Input.is_key_pressed(KEY_SPACE):
+		$gun_laser1.shoot()
+		#shoot()
+		#$gun_sound.play()
+		#get_node("guns/reload_timer").start()
 
 # Damage handling
 func damage(amount):
@@ -77,23 +78,6 @@ func _set_HP(new_value):
 		emit_signal("destroyed")
 		queue_free()
 		get_tree().change_scene("res://levels/demo_game_over.tscn")
-	pass
-
-# Shooting front cannon
-func shoot():
-	var pos_front = get_node("guns/front").get_global_position()
-	create_laser(pos_front)
-	can_shoot = false
-	pass
-
-func _on_reload_timer_timeout():
-	can_shoot = true
-
-func create_laser(pos):
-	var stage_node = get_parent()
-	var laser = laser_one.instance()
-	laser.set_position(pos)
-	stage_node.add_child(laser)
 	pass
 
 func create_explosion():

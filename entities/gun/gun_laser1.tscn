@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://entities/gun/gun_laser1.gd" type="Script" id=1]
+[ext_resource path="res://assets/sounds/laser_ship.wav" type="AudioStream" id=2]
+
+[node name="gun_laser1" type="Node2D"]
+position = Vector2( 307.497, 416.025 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="gun_position" type="Position2D" parent="."]
+
+[node name="reload_timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="gun_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+[connection signal="timeout" from="reload_timer" to="." method="_on_reload_timer_timeout"]
