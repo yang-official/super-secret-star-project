@@ -124,7 +124,6 @@ autoplay = true
 
 [node name="Pause" type="Control" parent="Menus"]
 pause_mode = 2
-visible = false
 margin_right = 640.0
 margin_bottom = 960.0
 script = ExtResource( 13 )
@@ -149,6 +148,20 @@ margin_right = 439.0
 margin_bottom = 660.0
 custom_fonts/font = SubResource( 2 )
 text = "Main Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save" type="Button" parent="Menus/Pause"]
+margin_left = 220.0
+margin_top = 674.381
+margin_right = 439.0
+margin_bottom = 754.381
+custom_fonts/font = SubResource( 2 )
+text = "Save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Unpause" type="Button" parent="Menus/Pause"]
 margin_left = 220.0
@@ -163,4 +176,5 @@ text = "Unpause"
 [connection signal="hp_updated" from="Player" to="HUD/tex_health/health" method="_on_Player_hp_updated"]
 [connection signal="money_updated" from="Player" to="HUD/tex_score/score" method="_on_Player_money_updated"]
 [connection signal="pressed" from="Menus/Pause/Menu" to="Menus/Pause" method="_on_Menu_pressed"]
+[connection signal="pressed" from="Menus/Pause/Save" to="Menus/Pause" method="_on_Save_pressed"]
 [connection signal="pressed" from="Menus/Pause/Unpause" to="Menus/Pause" method="_on_Unpause_pressed"]
